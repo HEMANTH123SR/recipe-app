@@ -14,9 +14,11 @@ const InputContent = () => {
       className="w-full h-96 rounded-lg flex justify-center items-center"
     >
      
-      <div className="relative flex items-center shadow-md rounded-lg">
+      <div className="relative flex items-center shadow-lg rounded-lg">
         <input type="text" placeholder="Search Recipes..."
         className="pl-12 pr-4 py-4 w-80 rounded-lg border border-gray-300 text-xl"
+        value={searchInput}
+        onChange={(e)=>setSearchInput(e.target.value)}
         />
 <BiSearch className="absolute left-3 w-7 h-7 text-gray-400 "/>
       </div>
