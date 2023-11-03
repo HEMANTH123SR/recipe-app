@@ -11,7 +11,7 @@ const InputContent = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-full h-96 rounded-lg flex justify-center items-center"
+      className="w-full h-96 rounded-lg flex justify-center items-center shadow-lg"
     >
      
       <div className="relative flex items-center shadow-lg rounded-lg">
