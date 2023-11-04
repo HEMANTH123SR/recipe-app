@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   recipesArray: [],
-  searchQuery:""
+  searchQuery:"",
+  searchId:{},
 };
 
 export const recipeSlice = createSlice({
@@ -14,11 +15,13 @@ export const recipeSlice = createSlice({
     },
     searchQueryHandle:(state,action)=>{
         state.searchQuery=action.payload
+    },searchIdHandler:(state,action)=>{
+      state.searchId=action.payload
     }
   },
 });
 
-export const { setRecipes ,searchQueryHandle} = recipeSlice.actions;
+export const { setRecipes ,searchQueryHandle,searchIdHandler} = recipeSlice.actions;
 
 
 
