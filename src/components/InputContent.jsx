@@ -1,7 +1,13 @@
-import { useState } from "react";
-import {BiSearch} from "react-icons/bi"
+import { BiSearch } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import { searchQueryHandle } from "../app/Reducer";
+
 const InputContent = () => {
-  const [searchInput, setSearchInput] = useState("");
+  const dispatch = useDispatch();
+  const searchQuery = useSelector((state) => state.recipes);
+  const handleSearchChange = (e) => {
+    dispatch(searchQueryHandle(e.target.value));
+  };
   return (
     <div
       style={{
@@ -13,14 +19,15 @@ const InputContent = () => {
       }}
       className="w-full h-96 rounded-lg flex justify-center items-center shadow-lg"
     >
-     
       <div className="relative flex items-center shadow-lg rounded-lg">
-        <input type="text" placeholder="Search Recipes..."
-        className="pl-12 pr-4 py-4 w-80 rounded-lg border border-gray-300 text-xl"
-        value={searchInput}
-        onChange={(e)=>setSearchInput(e.target.value)}
+        <input
+          type="text"
+          placeholder="Search Recipes..."
+          className="pl-12 pr-4 py-4 w-80 rounded-lg border border-gray-300 text-xl"
+          value={searchQuery.searchQuery}
+          onChange={handleSearchChange}
         />
-<BiSearch className="absolute left-3 w-7 h-7 text-gray-400 "/>
+        <BiSearch className="absolute left-3 w-7 h-7 text-gray-400 " />
       </div>
     </div>
   );

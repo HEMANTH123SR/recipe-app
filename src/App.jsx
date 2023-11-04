@@ -8,17 +8,19 @@ import { setRecipes } from "./app/Reducer";
 const App = () => {
   const dispatch = useDispatch();
   const recipes = useSelector((state) => state.recipes);
+  
 
   useEffect(() => {
     fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=00446ee4b9224a22a20aa436c734c309&query=Chicken`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=00446ee4b9224a22a20aa436c734c309&query=${recipes.searchQuery && recipes.searchQuery.length > 0    ? recipes.searchQuery : "Chiken"}`
     )
       .then((data) => data.json())
       .then((res) => {
         dispatch(setRecipes(res))
+        console.log(recipes)
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [recipes.searchQuery]);
   return (
     <div>
       <Nav />
@@ -26,8 +28,8 @@ const App = () => {
         <InputContent />
         <div className="p-5"></div>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {recipes.recipes ? (
-        recipes.recipes.map(({ id, title, image }) => (
+          {recipes.recipesArray ? (
+        recipes.recipesArray.map(({ id, title, image }) => (
           <RecipeCard id={id} title={title} image={image} key={id} />
         ))
       ) : (
