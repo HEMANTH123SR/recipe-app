@@ -11,3 +11,4 @@ const RecipeCard = ({ id, title, image }) => {
   
   export default RecipeCard;
   
+
