@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Nav from "./components/Nav";
+import Footer from "./components/Footer"
 import { useDispatch, useSelector } from "react-redux";
 import { setRecipes } from "./app/Reducer";
 
@@ -28,9 +29,9 @@ const App = () => {
   return (
     <div>
       <Nav />
-      <div className="p-4">
+     
         <Outlet />
-      </div>
+        <Footer/>
     </div>
   );
 };

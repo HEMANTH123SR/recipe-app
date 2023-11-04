@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -38,18 +36,17 @@ const DetailCard = () => {
 
   return (
     <div>
-      <h1>hello world yo {recipeId}</h1>
       {error ? (
         <h1>Something went wrong: {error.message}</h1>
       ) : (
-        <div className="p-14">
+        <div className="p-14 bg-slate-200">
           <div className="flex flex-row space-x-7">
             <img src={searchId.image} className="h-72 w-96 rounded-lg" />
             <div className="flex flex-col items-center">
-              <h1 className="text-2xl text-green-600 font-bold m-3">
+              <h1 className="text-3xl text-green-600 font-bold m-3 underline">
                 {searchId.title}
               </h1>
-              <h1>
+              <h1 className="text-green-500">
                 {summary}
               </h1>
             </div>
