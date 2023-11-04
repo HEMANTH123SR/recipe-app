@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import RecipeCard from "./components/RecipeCard";
 import { useDispatch, useSelector } from "react-redux";
 import { setRecipes } from "./app/Reducer";
+import Footer from "./components/Footer";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const App = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=00446ee4b9224a22a20aa436c734c309&query=${recipes.searchQuery && recipes.searchQuery.length > 0    ? recipes.searchQuery : "Chiken"}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=00446ee4b9224a22a20aa436c734c309&query=${recipes.searchQuery && recipes.searchQuery.length > 1    ? recipes.searchQuery : "pasta"}`
     )
       .then((data) => data.json())
       .then((res) => {
@@ -38,6 +39,7 @@ const App = () => {
   
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
