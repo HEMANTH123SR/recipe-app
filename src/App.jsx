@@ -27,7 +27,7 @@ const App = () => {
       .catch((e) => console.log(e));
   }, [recipes.searchQuery]);
   return (
-    <div>
+    <div className="w-full">
       <Nav />
 
       <Outlet />
