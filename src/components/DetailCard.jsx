@@ -68,7 +68,7 @@ const DetailCard = () => {
           
           </div>
           
-          <IngredientAndAnalyzedInstructions />
+          <IngredientAndAnalyzedInstructions searchId={searchId} />
         </div>
       )}
     </div>
