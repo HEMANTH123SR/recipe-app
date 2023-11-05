@@ -34,7 +34,7 @@ const DetailCard = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=f9b063217d4d42628c274ea08b034e9a`
+      `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=ffa7b4a031934e269d6643c0b4b8bb1f`
     )
       .then((res) => res.json())
       .then((data) => dispatch(searchIdHandler(data)))
@@ -49,14 +49,14 @@ const DetailCard = () => {
         <h1>Something went wrong: {error.message}</h1>
       ) : (
         
-        <div className="p-14 pb-0 bg-slate-200 absolute">
+        <div className="p-14 pb-0 bg-slate-200 absolute w-full">
           <h3 className="absolute rounded-full p-5 text-3xl right-24 top-6 font-extrabold bg-green-600 text-slate-200 shadow-xl">
             {searchId.healthScore}
           </h3>
-          <div className="flex flex-row space-x-7">
+          <div className="flex flex-col lg:flex-row xl:flex-row  space-x-7">
             <img
               src={searchId.image}
-              className="h-72 w-96 rounded-lg shadow-xl"
+              className="xl:h-2/3 xl:w-2/3 lg:h-2/5 lg:w-2/5 rounded-lg shadow-xl"
             />
             <div className="flex flex-col items-center">
               <h1 className="text-3xl text-green-600 font-bold m-3 underline">
