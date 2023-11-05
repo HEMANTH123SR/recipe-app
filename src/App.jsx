@@ -13,7 +13,7 @@ const App = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=ffa7b4a031934e269d6643c0b4b8bb1f&query=${
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=00446ee4b9224a22a20aa436c734c309&query=${
         recipes.searchQuery && recipes.searchQuery.length > 1
           ? recipes.searchQuery
           : "pasta"

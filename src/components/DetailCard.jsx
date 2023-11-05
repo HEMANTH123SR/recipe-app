@@ -34,7 +34,7 @@ const DetailCard = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=ffa7b4a031934e269d6643c0b4b8bb1f`
+      `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=00446ee4b9224a22a20aa436c734c309`
     )
       .then((res) => res.json())
       .then((data) => dispatch(searchIdHandler(data)))
