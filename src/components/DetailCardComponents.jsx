@@ -66,7 +66,7 @@ export const IngredientAndAnalyzedInstructions = ({ searchId }) => {
             searchId.extendedIngredients.map((data) => {
               return (
                 <div className="flex justify-center">
-                  <div className="flex flex-col  w-4/5 bg-slate-200 shadow-sm rounded-md p-3 m-3 ">
+                  <div className="flex flex-col  w-11/12 bg-slate-200 shadow-sm rounded-md p-3 my-3 ">
                     <h1 className="text-lg text-green-600 font-semibold">
                       {data.name.toUpperCase()}
                     </h1>
@@ -95,7 +95,7 @@ export const IngredientAndAnalyzedInstructions = ({ searchId }) => {
             searchId.analyzedInstructions[0].steps.map((data) => {
               return (
                 <div className="flex justify-center">
-                  <div className="flex flex-col w-3/4 bg-slate-200 shadow-sm rounded-md p-3 m-3 ">
+                  <div className="flex flex-col w-11/12 bg-slate-200 shadow-sm rounded-md p-3 m-3 ">
                     <h1 className="text-lg text-green-600 font-semibold">
                       Step {data.number}
                     </h1>
